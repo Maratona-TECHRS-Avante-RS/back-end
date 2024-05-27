@@ -1,0 +1,37 @@
+spring:
+  application:
+    name: sosrs
+  datasource:
+    url: jdbc:postgresql://localhost:5432/sosrs
+    username: oldflix
+    password: oldflix
+  jpa:
+    hibernate:
+      ddl-auto: validate
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+
+front-end:
+  path: ${PATH_APP:http://localhost:3000}
+
+security:
+  token-secret: ${JWT_SECRET:6c1420b8f3be7a61357ecc82a1c391dffe438930c103466b1660625e42ac91a6}
+
+values:
+  apiMap:
+    url: "https://maps.googleapis.com/maps/api/geocode/json?"
+    key: "AIzaSyBv4eDHfLZ4XhXybeoh3ElQqM_-pW7XiDo"
+
+server:
+  error:
+    include-message: always
+
+spring.jackson.default-property-inclusion: non_null
+
+logging:
+  pattern:
+    console: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
+  level:
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    org.springframework.web.servlet: DEBUG
