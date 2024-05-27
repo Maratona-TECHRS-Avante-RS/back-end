@@ -46,7 +46,7 @@ public class Help extends BaseEntity {
     private Answer numberVolunteers;
 
 
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
             name = "helps_tools_types",
             joinColumns = @JoinColumn(name = "help_id"),

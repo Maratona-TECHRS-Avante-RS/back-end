@@ -62,3 +62,5 @@ CREATE TABLE helps_tools_types(
                                   tool_type_id BIGINT REFERENCES tools_types (id) ON DELETE CASCADE,
                                   help_id BIGINT REFERENCES helps (id) ON DELETE CASCADE
 );
+
+

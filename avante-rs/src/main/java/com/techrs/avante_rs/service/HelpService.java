@@ -43,8 +43,9 @@ public class HelpService {
 
     @Transactional
     public void delete(Long id) {
-        validHelpService.isUserCreatorByIdHelp(id);
-        helpRepository.deleteById(id);
+        Help help = validHelpService.getHelpById(id);
+        validHelpService.isUserCreatorByHelp(help);
+        helpRepository.delete(help);
     }
 
     @Transactional
